@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import UserImg from '../assets/images/broadband-user.jpg'
+import UserImg from '../images/broadband-user.jpg'
 
 const HeroSection = () => {
     const userDetails = [

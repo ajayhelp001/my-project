@@ -2,6 +2,7 @@ import React from 'react'
 import HeroSection from '../Components/HeroSection'
 import SpeedAreaSection from '../Components/SpeedAreaSection'
 import CounterSection from '../Components/CounterSection'
+import WhoWeAreSection from '../Components/WhoWeAreSection'
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
         <HeroSection/>
         <SpeedAreaSection/>
         <CounterSection/>
+        <WhoWeAreSection/>
     </>
   )
 }

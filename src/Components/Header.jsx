@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Logo from '../assets/images/logo.svg'
-import Location from '../assets/images/icon/location.svg'
-import Phone from '../assets/images/icon/phone.svg'
+import Logo from '../images/logo.svg'
+import Location from '../images/icon/location.svg'
+import Phone from '../images/icon/phone.svg'
 import { Link } from 'react-router-dom'
 import SocialIcons from './SocialIcons'
 
