@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import UserImg from '../images/broadband-user.jpg'
+import UserImg from '../assets/images/broadband-user.jpg'
+import ThemeButton from '../GlobalComponent/ThemeButton'
 
 const HeroSection = () => {
     const userDetails = [
@@ -34,7 +35,7 @@ const HeroSection = () => {
                                                 <div className="sub-titile">{item.subtitle}</div>
                                                 <h1 className="heading">{item.heading.heading1} <span>{item.heading.heading2}</span> {item.heading.heading3}</h1>
                                                 <p className="content">{item.discription}</p>
-                                                <Link to={item.link} className="themebtn white-hover">{item.linkTitle}</Link>
+                                                <ThemeButton btnLink={item.btnLink} btnText={item.linkTitle} hoverClass="white-hover" />
                                             </div>
                                         </div>
                                     </div>

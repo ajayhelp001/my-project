@@ -1,8 +1,8 @@
 import React from 'react'
-import Facebook from '../images/icon/facebook.svg'
-import Twiter from '../images/icon/twiter.svg'
-import Linkdine from '../images/icon/linkdine.svg'
-import Instagram from '../images/icon/instagram.svg'
+import Facebook from '../assets/images/icon/facebook.svg'
+import Twiter from '../assets/images/icon/twiter.svg'
+import Linkdine from '../assets/images/icon/linkdine.svg'
+import Instagram from '../assets/images/icon/instagram.svg'
 import { Link } from 'react-router-dom'
 
 

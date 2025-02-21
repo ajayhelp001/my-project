@@ -1,8 +1,8 @@
 import React from 'react'
-import ArrowImg from '../images/icon/right-arrow-single.svg'
-import UserImg from '../images/icon/speed.svg'
-import UserImg1 from '../images/icon/fiber.svg'
-import UserImg2 from '../images/icon/allmobile.svg'
+import ArrowImg from '../assets/images/icon/right-arrow-single.svg'
+import UserImg from '../assets/images/icon/speed.svg'
+import UserImg1 from '../assets/images/icon/fiber.svg'
+import UserImg2 from '../assets/images/icon/allmobile.svg'
 import { Link } from 'react-router-dom'
 
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
-import Clints from "../images/icon/clients.svg";
-import Employee from "../images/icon/clients.svg";
-import Rating from "../images/icon/clients.svg";
-import Delivery from "../images/icon/clients.svg";
+import Clints from '../assets/images/icon/clients.svg';
+import Employee from '../assets/images/icon/clients.svg';
+import Rating from '../assets/images/icon/clients.svg';
+import Delivery from '../assets/images/icon/clients.svg';
 
 const CounterSection = () => {
   const counterCard = [

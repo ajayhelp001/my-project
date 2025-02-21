@@ -1,9 +1,9 @@
 import React from 'react'
-import SocialIcons from './SocialIcons'
-import Logo from '../images/logo.svg'
-import Phone from '../images/icon/call.svg'
-import Mail from '../images/icon/mail.svg'
-import Send from '../images/icon/send.svg'
+import SocialIcons from '../GlobalComponent/SocialIcons'
+import Logo from '../assets/images/logo.svg'
+import Phone from '../assets/images/icon/call.svg'
+import Mail from '../assets/images/icon/mail.svg'
+import Send from '../assets/images/icon/send.svg'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
