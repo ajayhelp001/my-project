@@ -14,6 +14,10 @@ const TestimonialSection = () => {
             clientPosition: 'Market Manager',
             clientDiscription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.',
             clientRating: 4,
+            facebookLink: 'https://facebook.com',
+            twitterLink: 'https://twitter.com',
+            linkedinLink: 'https://linkedin.com',
+            instagramLink: 'https://instagram.com',
         }
     ]
 
@@ -63,7 +67,7 @@ const TestimonialSection = () => {
                                                     <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
                                                 </ul>
                                             </div>
-                                            {/* <ul className={socialIconClass}>
+                                            {/* <ul className="social">
                                                 {
                                                     authorSocialLink.map((social, i) => (
                                                         <li key={i}>
@@ -76,52 +80,6 @@ const TestimonialSection = () => {
                                     </div>
                                   ))  
                                 }
-                                {/* <div className="col-xl-4 col-lg-6 col-sm-12 col-12">
-                                    <div className="clientcard">
-                                        <div className="client-image"><img src="assets/images/author-2.jpg" alt="author" /></div>
-                                        <h3 className="client-name">David Patel</h3>
-                                        <span className="client-position">Project Manager</span>
-                                        <div className="discription">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.</p>
-                                            <ul className="rating">
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                            </ul>
-                                        </div>
-                                        <ul className="social-icon">
-                                            <li><a href="javascript:;"><img src="assets/images/icon/facebook.svg" alt="Facebook" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/twiter.svg" alt="Twiter" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/linkdine.svg" alt="Linkdine" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/instagram.svg" alt="Instagram" /></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-xl-4 col-lg-12 col-sm-12 col-12">
-                                    <div className="clientcard">
-                                        <div className="client-image"><img src="assets/images/author-3.jpg" alt="author" /></div>
-                                        <h3 className="client-name">Emily Carter</h3>
-                                        <span className="client-position">Opertions Manager</span>
-                                        <div className="discription">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.</p>
-                                            <ul className="rating">
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                            </ul>
-                                        </div>
-                                        <ul className="social-icon">
-                                            <li><a href="javascript:;"><img src="assets/images/icon/facebook.svg" alt="Facebook" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/twiter.svg" alt="Twiter" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/linkdine.svg" alt="Linkdine" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/instagram.svg" alt="Instagram" /></a></li>
-                                        </ul>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     </div>

@@ -39,20 +39,20 @@
                 padding: 0px 10px;
                 margin-bottom: 20px;
                 border-left: 2px solid $theme1;
-                // transform: translateY(24px);
+                transform: translateY(24px);
                 transition-delay: 0.2s;
             }
             & .sub-titile, & .heading, & .content{
                 color: $white;
             }
             & .sub-titile, & .heading, & .content, & .themebtn{
-                // opacity: 0;
-                // visibility: hidden;
+                opacity: 0;
+                visibility: hidden;
                 transition: all ease-in-out 0.5s;
             }
             & .heading {
-                // transform: translateY(100px);
-                // transition-delay: 0.5s;
+                transform: translateY(100px);
+                transition-delay: 0.5s;
                 margin-bottom: 10px;
                 & span {
                     color: $theme1;
@@ -60,71 +60,67 @@
             }
             & .content {
                 margin-bottom: 40px;
-                // transform: translateY(50px);
+                transform: translateY(50px);
                 transition-delay: 0.8s;
             }
             & .themebtn{
-                // transform: translateY(50px);
+                transform: translateY(50px);
                 transition-delay: 1s;
             }
-        }
-        & .owl-stage-outer, & .owl-stage , & .owl-item {
-            height: 100%;
-        }
-        & .owl-item{
-            &.active {
-                & .item {
-                    & .user-image{
-                        & img{
-                            transform: scale(1.2);
-                        }
+            &.swiper-slide-active{
+                & .user-image{
+                    & img{
+                        transform: scale(1.2);
                     }
-                    & .sub-titile, & .heading, & .content, & .themebtn{
-                        transform: translateY(0px);
-                        opacity: 1;
-                        visibility: visible;
-                    }
+                }
+                & .sub-titile, & .heading, & .content, & .themebtn{
+                    transform: translateY(0px);
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
         }
-        & .owl-nav {
-            position: absolute;
-            align-items: center;
-            bottom: 0;
-            width: 100%;
-            // display: flex;
-            display: none;
-            justify-content: center;
-            gap: 20px;
-            padding: 10px 0px;
-            background: #000;
-            & button {
-                width: 55px;
-                height: 55px;
-                border-radius: 50%;
-                position: relative;
-                background: $black;
-                & img {
-                    opacity: 0.2;
-                    width: 100%;
-                }
-                &:hover{
-                    & img {
-                        opacity: 1;
-                    }
-                }
-            }
-            &::before{
-                content: "";
-                height: 1px;
-                width: 80%;
-                border-bottom: 1px solid rgb($white, 0.1);
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-        }
+        // & .owl-stage-outer, & .owl-stage , & .owl-item {
+        //     height: 100%;
+        // }
+        // & .owl-nav {
+        //     position: absolute;
+        //     align-items: center;
+        //     bottom: 0;
+        //     width: 100%;
+        //     // display: flex;
+        //     display: none;
+        //     justify-content: center;
+        //     gap: 20px;
+        //     padding: 10px 0px;
+        //     background: #000;
+        //     & button {
+        //         width: 55px;
+        //         height: 55px;
+        //         border-radius: 50%;
+        //         position: relative;
+        //         background: $black;
+        //         & img {
+        //             opacity: 0.2;
+        //             width: 100%;
+        //         }
+        //         &:hover{
+        //             & img {
+        //                 opacity: 1;
+        //             }
+        //         }
+        //     }
+        //     &::before{
+        //         content: "";
+        //         height: 1px;
+        //         width: 80%;
+        //         border-bottom: 1px solid rgb($white, 0.1);
+        //         position: absolute;
+        //         top: 50%;
+        //         left: 50%;
+        //         transform: translate(-50%, -50%);
+        //     }
+        // }
     }
 }
 

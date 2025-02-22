@@ -7,6 +7,7 @@ import UltimateViewSection from '../Components/UltimateViewSection'
 import WhyChooseUsSection from '../Components/WhyChooseUsSection'
 import FaqSection from '../Components/FaqSection'
 import TestimonialSection from '../Components/TestimonialSection'
+import BrandsSection from '../Components/BrandsSection'
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
         <WhyChooseUsSection/>
         <FaqSection/>
         <TestimonialSection/>
+        <BrandsSection/>
     </>
   )
 }

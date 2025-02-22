@@ -26,7 +26,8 @@ const Header = () => {
         { title: 'United States', link : '#', linkImg: Location, imgAlt : 'Location' },
         { title: '+987-654-3210', link : 'tel:9876543210', linkImg: Phone, imgAlt : 'Phone' }
     ]
-    
+
+    const [menuImg , setMenuImg] = useState(false)
 
   return (
     <>
@@ -55,7 +56,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg " aria-label="Offcanvas navbar large">
             <div className="container">
                 <a className="navbar-brand" to="/"><img src={Logo} alt="logo" /></a>
-                <button className="navbar-toggler shadow-none border-0 rounded-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+                <button onClick={() => setMenuImg(!menuImg)} className={`navbar-toggler shadow-none border-0 rounded-0 d-lg-none ${menuImg ? 'active' : ''}`} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
                     <span className="menu"></span>
                 </button>
                 <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2">

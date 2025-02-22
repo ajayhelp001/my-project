@@ -38,7 +38,7 @@ const SpeedAreaSection = () => {
                     {
                         speedCards.map((item, speed) => 
                             <div className="col-xl-4 col-lg-6 col-12" key={speed}>
-                                <div className="speedcard">
+                                <div className={`speedcard ${speed ===1 ? 'active' : ''}`}>
                                     <div className="top-heading">
                                         <div className="network-icon"><img src={item.cardImg} alt={item.cardImgAlt} /></div>
                                         <h3 className="title"><Link to={item.btnLink}>{item.title}</Link></h3>
