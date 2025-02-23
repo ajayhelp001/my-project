@@ -31,8 +31,10 @@
         }
     }
     &.outline{
+        border-color: $white;
         &:hover{
             color: $white;
+            border-color: $theme1;
             &::before{
                 width: calc(100% + 4px);
                 opacity: 1;
@@ -54,6 +56,7 @@
         &:hover, &.outline{
             color: $white;
             border-color: $white;
+            background-color: transparent;
         }
     }
 }

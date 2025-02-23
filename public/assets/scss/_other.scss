@@ -59,6 +59,7 @@
                 padding: 4px 15px;
                 display: flex;
                 position: relative;
+                text-transform: capitalize;
                 &:not(.active){
                     padding: 0px;
                     & a {

@@ -17,9 +17,9 @@ const CounterSection = () => {
   const [startCount, setStartCount] = useState(false);
 
   const { ref } = useInView({
-    threshold: 0.3, // Triggers when 30% of the section is visible
+    threshold: 0.3, 
     onChange: (inView) => {
-      setStartCount(inView); // Start when in view, reset when out
+      setStartCount(inView);
     },
   });
 

@@ -5,6 +5,7 @@ import Phone from '../assets/images/icon/call.svg'
 import Mail from '../assets/images/icon/mail.svg'
 import Send from '../assets/images/icon/send.svg'
 import { Link } from 'react-router-dom'
+import BrandsSection from './BrandsSection'
 
 const Footer = () => {
   const footerContactDetails = [
@@ -26,15 +27,16 @@ const Footer = () => {
       linkTitle : "Navigation",
       footerLink : [
         {title: 'Home', link : '/'},
-        {title: 'About Us', link : '/'},
+        {title: 'About Us', link : '/about'},
         {title: 'Our Package', link : '/'},
-        {title: 'Contact Us', link : '/'},
-        {title: 'Blogs', link : '/'},
+        {title: 'Contact Us', link : '/contact'},
+        {title: 'Blogs', link : '/blogs'},
       ]
     }
   ]
   return (
     <>
+    <BrandsSection/>
       <footer className="footer">
         <div className="top-footer">
             <div className="container">

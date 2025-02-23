@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Logo from '../assets/images/logo.svg'
 import Location from '../assets/images/icon/location.svg'
 import Phone from '../assets/images/icon/phone.svg'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import SocialIcons from '../GlobalComponent/SocialIcons'
 
 const Header = () => {
@@ -25,6 +25,19 @@ const Header = () => {
     const contactLink = [
         { title: 'United States', link : '#', linkImg: Location, imgAlt : 'Location' },
         { title: '+987-654-3210', link : 'tel:9876543210', linkImg: Phone, imgAlt : 'Phone' }
+    ]
+
+    const usefulLinks = [
+        { title: 'Home', link : '/'},
+        { title: 'About', link : '/about'},
+        { title: 'Pages', link : '' ,
+            innerNav : [
+                { title: 'Services', link : '/'},
+                { title: 'Blogs', link : '/blogs'},
+                { title: 'Singal Post', link : '/'}
+            ]
+        },
+        { title: 'Contact', link : '/contact'}
     ]
 
     const [menuImg , setMenuImg] = useState(false)
@@ -62,17 +75,23 @@ const Header = () => {
                 <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2">
                     <div className="offcanvas-body align-items-center">
                         <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
-                            <li className="nav-item"><Link className="nav-link active" aria-current="page" to="/">Home</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/">About</Link></li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Pages</Link>
-                                <ul className="sub-menu">
-                                    <li><Link className="menu-item" to="/">Services</Link></li>
-                                    <li><Link className="menu-item" to="/">Blogs</Link></li>
-                                    <li><Link className="menu-item" to="/">Singal Post</Link></li>
-                                </ul>
-                            </li>
-                            <li className="nav-item"><Link className="nav-link" to="/">Contact</Link></li>
+                            {
+                                usefulLinks.map((navs, index) => (
+                                    <li key={index} className="nav-item"><NavLink className="nav-link" aria-current="page" to={navs.link}>{navs.title}</NavLink>
+                                            {
+                                                navs.innerNav && (
+                                                    <ul className="sub-menu">
+                                                        {
+                                                            navs.innerNav.map((submenu, i) => (
+                                                                <li key={i}><NavLink className="menu-item" to={submenu.link}>{submenu.title}</NavLink></li>
+                                                            ))
+                                                        }
+                                                    </ul>
+                                                )
+                                            }
+                                    </li>
+                                ))
+                            }
                         </ul>
                         <Link to='/' className="themebtn outline text-white">Sign In</Link>
                     </div>

@@ -30,7 +30,7 @@ const FaqSection = () => {
                                     <div className="accordion-item" key={i}>
                                         <h2 className="accordion-header">
                                             <button className={i === 0 ? 'accordion-button' : 'accordion-button collapsed'} type="button" data-bs-toggle="collapse" data-bs-target={`#collapseOne${i+1}`} aria-expanded="true" aria-controls={`collapseOne${i+1}`}>
-                                               {item.faqHeading}
+                                                {item.faqHeading}
                                             </button>
                                         </h2>
                                         <div id={`collapseOne${i+1}`} className={i === 0 ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'} data-bs-parent="#accordionExample">

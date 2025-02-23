@@ -7,16 +7,16 @@ import { Link } from 'react-router-dom';
 
 const BrandsSection = () => {
     const brands = [
-        {brandName : 'Treval', brandLogo : 'assets/images/1.png'},
-        {brandName : 'Treval', brandLogo : 'assets/images/2.png'},
-        {brandName : 'Treval', brandLogo : 'assets/images/3.png'},
-        {brandName : 'Treval', brandLogo : 'assets/images/4.png'},
-        {brandName : 'Treval', brandLogo : 'assets/images/5.png'},
-        {brandName : 'Treval', brandLogo : 'assets/images/1.png'},
-        {brandName : 'Treval', brandLogo : 'assets/images/2.png'},
-        {brandName : 'Treval', brandLogo : 'assets/images/3.png'},
-        {brandName : 'Treval', brandLogo : 'assets/images/4.png'},
-        {brandName : 'Treval', brandLogo : 'assets/images/5.png'}
+        {brandName : 'Treval', brandLogo : '../assets/images/1.png'},
+        {brandName : 'Treval', brandLogo : '../assets/images/2.png'},
+        {brandName : 'Treval', brandLogo : '../assets/images/3.png'},
+        {brandName : 'Treval', brandLogo : '../assets/images/4.png'},
+        {brandName : 'Treval', brandLogo : '../assets/images/5.png'},
+        {brandName : 'Treval', brandLogo : '../assets/images/1.png'},
+        {brandName : 'Treval', brandLogo : '../assets/images/2.png'},
+        {brandName : 'Treval', brandLogo : '../assets/images/3.png'},
+        {brandName : 'Treval', brandLogo : '../assets/images/4.png'},
+        {brandName : 'Treval', brandLogo : '../assets/images/5.png'}
     ]
   return (
     <>
