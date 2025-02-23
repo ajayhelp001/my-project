@@ -4,6 +4,8 @@ import Facebook from '../assets/images/icon/facebook.svg'
 import Twiter from '../assets/images/icon/twiter.svg'
 import Linkdine from '../assets/images/icon/linkdine.svg'
 import Instagram from '../assets/images/icon/instagram.svg'
+import Rating from '../assets/images/icon/star.svg'
+import GrayStar from '../assets/images/icon/star-gray.svg'
 import { Link } from 'react-router-dom'
 
 const TestimonialSection = () => {
@@ -14,26 +16,28 @@ const TestimonialSection = () => {
             clientPosition: 'Market Manager',
             clientDiscription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.',
             clientRating: 4,
+            facebookLink: 'https://facebook.com',
+            twitterLink: 'https://twitter.com',
+            linkedinLink: 'https://linkedin.com',
+            instagramLink: 'https://instagram.com',
+
+        },
+        {
+            clientImg: './assets/images/author-2.jpg',
+            clientName: 'David Patel',
+            clientPosition: 'Project Manager',
+            clientDiscription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.',
+            clientRating: 3,
+        },
+        {
+            clientImg: './assets/images/author-3.jpg',
+            clientName: 'Emily Carter',
+            clientPosition: 'Opertions Manager',
+            clientDiscription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.',
+            clientRating: 4,
         }
     ]
 
-    const authorSocialLink =[
-        {
-            id: 1,
-            link: ['https://facebook.com','https://twitter.com', 'https://linkedin.com', 'https://instagram.com'],
-            linkAlt: ['Facebook','Twitter', 'Linkedin', 'Instagram'],
-        },
-        {
-            id: 2,
-            link: ['https://facebook.com','https://twitter.com', 'https://linkedin.com', 'https://instagram.com'],
-            linkAlt: ['Facebook','Twitter', 'Linkedin', 'Instagram'],
-        },
-        {
-            id: 3,
-            link: ['https://facebook.com','https://twitter.com', 'https://linkedin.com', 'https://instagram.com'],
-            linkAlt: ['Facebook','Twitter', 'Linkedin', 'Instagram'],
-        }
-    ]
   return (
     <>
         <section className="testimonial-section section-spacing">
@@ -47,8 +51,8 @@ const TestimonialSection = () => {
                         <div className="testimonial-card" id="dotsscode">
                             <div className="row">
                                 {
-                                  authors.map((item, k) => (
-                                    <div className="col-xl-4 col-lg-6 col-sm-12 col-12">
+                                    authors.map((item, k) => (
+                                    <div className="col-xl-4 col-lg-6 col-sm-12 col-12" key={k}>
                                         <div className="clientcard">
                                             <div className="client-image"><img src={item.clientImg} alt={item.clientName} /></div>
                                             <h3 className="client-name">{item.clientName}</h3>
@@ -56,72 +60,23 @@ const TestimonialSection = () => {
                                             <div className="discription">
                                                 <p>{item.clientDiscription}</p>
                                                 <ul className="rating">
-                                                    <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                    <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                    <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                    <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                    <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <li key={i}>
+                                                            <img src={i < item.clientRating ? `${Rating}` : `${GrayStar}`} alt="rating" />
+                                                        </li>
+                                                    ))}
                                                 </ul>
                                             </div>
-                                            {/* <ul className={socialIconClass}>
-                                                {
-                                                    authorSocialLink.map((social, i) => (
-                                                        <li key={i}>
-                                                            <Link to={social.link}><img src={val.linkImg} alt={val.link} /></Link>
-                                                        </li>
-                                                    ))
-                                                }
-                                            </ul> */}
+                                            <ul className="social-icon">
+                                                <li><Link to={item.facebookLink}><img src={Facebook} alt="Facebook" /></Link></li>
+                                                <li><Link to={item.twitterLink}><img src={Twiter} alt="Twiter" /></Link></li>
+                                                <li><Link to={item.linkedinLink}><img src={Linkdine} alt="Linkdine" /></Link></li>
+                                                <li><Link to={item.instagramLink}><img src={Instagram} alt="Instagram" /></Link></li>
+                                            </ul>
                                         </div>
                                     </div>
-                                  ))  
+                                    ))  
                                 }
-                                {/* <div className="col-xl-4 col-lg-6 col-sm-12 col-12">
-                                    <div className="clientcard">
-                                        <div className="client-image"><img src="assets/images/author-2.jpg" alt="author" /></div>
-                                        <h3 className="client-name">David Patel</h3>
-                                        <span className="client-position">Project Manager</span>
-                                        <div className="discription">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.</p>
-                                            <ul className="rating">
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                            </ul>
-                                        </div>
-                                        <ul className="social-icon">
-                                            <li><a href="javascript:;"><img src="assets/images/icon/facebook.svg" alt="Facebook" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/twiter.svg" alt="Twiter" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/linkdine.svg" alt="Linkdine" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/instagram.svg" alt="Instagram" /></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-xl-4 col-lg-12 col-sm-12 col-12">
-                                    <div className="clientcard">
-                                        <div className="client-image"><img src="assets/images/author-3.jpg" alt="author" /></div>
-                                        <h3 className="client-name">Emily Carter</h3>
-                                        <span className="client-position">Opertions Manager</span>
-                                        <div className="discription">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.</p>
-                                            <ul className="rating">
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                                <li><img src="assets/images/icon/star.svg" alt="rating" /></li>
-                                            </ul>
-                                        </div>
-                                        <ul className="social-icon">
-                                            <li><a href="javascript:;"><img src="assets/images/icon/facebook.svg" alt="Facebook" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/twiter.svg" alt="Twiter" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/linkdine.svg" alt="Linkdine" /></a></li>
-                                            <li><a href="javascript:;"><img src="assets/images/icon/instagram.svg" alt="Instagram" /></a></li>
-                                        </ul>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     </div>
