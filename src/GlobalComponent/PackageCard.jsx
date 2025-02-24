@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const PackageCard = ({planName, planPrice, planDuration, planSpeed, plan = 'Buy Now', features} ) => {
+const PackageCard = ({planName, planPrice, planDuration, planSpeed, planLink = '', plan = 'Buy Now', features} ) => {
     const allFeatures =[
         "Service Support 24/7",
         "No lock in contract",
@@ -14,7 +15,7 @@ const PackageCard = ({planName, planPrice, planDuration, planSpeed, plan = 'Buy 
             <h3 className="plan-title">{planName}</h3>
             <div className="plan-price">₹{planPrice} <sub>/{planDuration}</sub></div>
             <div className="plan-sub-title">{planSpeed}</div>
-            <a href="javascript:;" className="themebtn white-hover">{plan}</a>
+            <Link to={planLink} className="themebtn white-hover">{plan}</Link>
             <ul>
                 {
                     allFeatures.map((feature, i) => (

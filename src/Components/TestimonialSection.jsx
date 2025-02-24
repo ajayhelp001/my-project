@@ -7,6 +7,7 @@ import Instagram from '../assets/images/icon/instagram.svg'
 import Rating from '../assets/images/icon/star.svg'
 import GrayStar from '../assets/images/icon/star-gray.svg'
 import { Link } from 'react-router-dom'
+import SocialIcons from '../GlobalComponent/SocialIcons'
 
 const TestimonialSection = () => {
     const authors = [
@@ -15,11 +16,7 @@ const TestimonialSection = () => {
             clientName: 'Smith Morgan',
             clientPosition: 'Market Manager',
             clientDiscription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.',
-            clientRating: 4,
-            facebookLink: 'https://facebook.com',
-            twitterLink: 'https://twitter.com',
-            linkedinLink: 'https://linkedin.com',
-            instagramLink: 'https://instagram.com',
+            clientRating: 4
 
         },
         {
@@ -27,14 +24,14 @@ const TestimonialSection = () => {
             clientName: 'David Patel',
             clientPosition: 'Project Manager',
             clientDiscription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.',
-            clientRating: 3,
+            clientRating: 3
         },
         {
             clientImg: './assets/images/author-3.jpg',
             clientName: 'Emily Carter',
             clientPosition: 'Opertions Manager',
             clientDiscription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consectetur natus neque magnam fugit voluptatibus, impedit sint ipsa culpa maiores.',
-            clientRating: 4,
+            clientRating: 4
         }
     ]
 
@@ -67,12 +64,13 @@ const TestimonialSection = () => {
                                                     ))}
                                                 </ul>
                                             </div>
-                                            <ul className="social-icon">
+                                            <SocialIcons />
+                                            {/* <ul className="social-icon">
                                                 <li><Link to={item.facebookLink}><img src={Facebook} alt="Facebook" /></Link></li>
                                                 <li><Link to={item.twitterLink}><img src={Twiter} alt="Twiter" /></Link></li>
                                                 <li><Link to={item.linkedinLink}><img src={Linkdine} alt="Linkdine" /></Link></li>
                                                 <li><Link to={item.instagramLink}><img src={Instagram} alt="Instagram" /></Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </div>
                                     </div>
                                     ))  

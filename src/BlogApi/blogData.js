@@ -1,11 +1,12 @@
 const blogPosts = [
     {
         id: 1,
-        title: "The Future of Broadband: Speed and Connectivity",
+        title: "The Future of Broadband Speed and Connectivity",
+        slug: "the-future-of-broadband-speed-and-connectivity",
         date: "10 February 2025",
         comments: 30,
-        views: "1.2K Views",
-        image: "assets/images/blog/blog-1.jpg",
+        views: "1.2K",
+        image: "../assets/images/blog/blog-1.jpg",
         introduction: "Broadband technology is evolving rapidly, shaping the way we connect to the digital world. With advancements in fiber optics and 5G, the future promises even faster and more reliable connectivity. This post explores how broadband is revolutionizing communication, business, and entertainment.",
         sections: [
             {
@@ -23,11 +24,16 @@ const blogPosts = [
                 content: "Fiber optic broadband provides unmatched speed and stability, but wireless solutions like 5G offer greater flexibility. Both technologies are shaping the internet landscape for the future."
             }
         ],
+        relatedIMg : [
+            "../assets/images/news-user1.png",
+            "../assets/images/news-user.png"
+        ],
         testimonial: {
             quote: "Upgrading to fiber broadband transformed my work-from-home experience!",
             author: "James, Remote Worker"
         },
         author: {
+            image: '../assets/images/Albanian.png',
             name: "Alex Johnson",
             bio: "Tech blogger and broadband analyst, passionate about the future of internet technology.",
             socials: {
@@ -40,10 +46,11 @@ const blogPosts = [
     {
         id: 2,
         title: "How Fiber Optic Broadband is Changing the Game",
+        slug: "how-fiber-optic-broadband-is-changing-the-game",
         date: "18 January 2025",
         comments: 5,
-        views: "1.5K Views",
-        image: "assets/images/blog/blog-1.jpg",
+        views: "1.5K",
+        image: "../assets/images/blog/blog-1.jpg",
         introduction: "Fiber optic broadband is setting new standards for internet speed and reliability. Unlike traditional DSL or cable, fiber uses light signals to transmit data, resulting in unparalleled performance.",
         sections: [
             {
@@ -77,10 +84,11 @@ const blogPosts = [
     {
         id: 3,
         title: "The Rise of 5G Home Internet",
+        slug: "the-rise-of-5g-home-internet",
         date: "02 March 2025",
         comments: 8,
-        views: "2K Views",
-        image: "assets/images/blog/blog-1.jpg",
+        views: "2K",
+        image: "../assets/images/blog/blog-1.jpg",
         introduction: "5G home internet is revolutionizing connectivity by offering ultra-fast speeds without the need for cables. This post explores how 5G is competing with traditional broadband solutions.",
         sections: [
             {
@@ -113,11 +121,12 @@ const blogPosts = [
     },
     {
         id: 4,
-        title: "Broadband Security: Protecting Your Connection",
+        title: "Broadband Security Protecting Your Connection",
+        slug: "broadband-security-protecting-your-connection",
         date: "22 April 2025",
         comments: 2,
-        views: "950 Views",
-        image: "assets/images/blog/blog-1.jpg",
+        views: "950",
+        image: "../assets/images/blog/blog-1.jpg",
         introduction: "As internet speeds increase, so do the security risks. This article discusses how to safeguard your broadband connection from cyber threats.",
         sections: [
             {
@@ -150,11 +159,12 @@ const blogPosts = [
     },
     {
         id: 5,
-        title: "Comparing Broadband Providers: How to Choose?",
+        title: "Comparing Broadband Providers How to Choose?",
+        slug: "comparing-broadband-providers-how-to-choose",
         date: "30 May 2025",
         comments: 7,
-        views: "3.1K Views",
-        image: "assets/images/blog/blog-1.jpg",
+        views: "3.1K",
+        image: "../assets/images/blog/blog-1.jpg",
         introduction: "With so many broadband providers available, choosing the right one can be difficult. This guide breaks down key factors to consider before making a decision.",
         sections: [
             {
@@ -188,10 +198,11 @@ const blogPosts = [
     {
         id: 6,
         title: "How to Boost Your Broadband Speed",
+        slug: "how-to-boost-your-broadband-speed",
         date: "15 June 2025",
         comments: 6,
-        views: "2.8K Views",
-        image: "assets/images/blog/blog-1.jpg",
+        views: "2.8K",
+        image: "../assets/images/blog/blog-1.jpg",
         introduction: "Slow internet speeds can be frustrating. Learn simple tricks to optimize your broadband speed and improve performance.",
         sections: [
             {

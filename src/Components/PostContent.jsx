@@ -1,62 +1,74 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import blogPosts from '../BlogApi/blogData'
+import SocialIcons from '../GlobalComponent/SocialIcons';
 
 const PostContent = () => {
-    // const { id } = useParams();
-    // const post = blogPosts.find((post) => post.id === id)
-    // if (!post) {
-    //     return <h2 className='text-white text-center'>Post Not Found</h2>;
-    // }
+    
+    const { slug } = useParams();
+    const post = blogPosts.find((post) => post.slug === slug)
+    if (!post) {
+        return <h2 className='text-white text-center'>Post Not Found</h2>;
+    }
+
+    const authorSocialLink = [
+        { link: `https://facebook.com/${post.author.name}` },
+        { link: `https://twitter.com/${post.author.name}` },
+        { link: `https://linkedin.com/${post.author.name}` },
+        { link: `https://instagram.com/${post.author.name}` }
+    ]
     return (
         <>
             <section className="blog-details section-spacing">
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-8 col-lg-8 col-12">
-                            {/* {
-                                post.map((item , index) => (
-                                    <h2 key={index.id}>{item.title}</h2>
-                                ))
-                            } */}
                             <div className="navtab-content">
-                                <h2 className="heading">The whimsically named Egg Canvas brainchesiko</h2>
+                                <h2 className="heading">{post.title}</h2>
                                 <ul className="post-info">
-                                    <li><span><img src="../assets/images/icon/date.svg" alt="post date" /></span><Link to={''}>08 August 2024</Link></li>
-                                    <li><span><img src="../assets/images/icon/comment.svg" alt="comments" /></span><Link to={''}>0 Comments</Link></li>
-                                    <li><span><img src="../assets/images/icon/view.svg" alt="post date" /></span><Link to={''}>Viewer</Link></li>
+                                    <li><span><img src="../assets/images/icon/date.svg" alt="post date" /></span><Link to={''}>{post.date}</Link></li>
+                                    <li><span><img src="../assets/images/icon/comment.svg" alt="comments" /></span><Link to={''}>{post.comments > 0 ? post.comments : 0} Comments</Link></li>
+                                    <li><span><img src="../assets/images/icon/view.svg" alt="post date" /></span><Link to={''}>{post.views} Viewer</Link></li>
                                 </ul>
                                 <div className="details-img">
-                                    <img src="../assets/images/blog/blog-1.jpg" alt="blog-details" />
-                                    <div className="admin">Albanian</div>
+                                    <img src={post.image} alt="blog-details" />
+                                    <div className="admin">{post.author.name}</div>
                                 </div>
                                 <h3 className="blog-info-title">Introduction</h3>
-                                <p>In the vast digital landscape, creativity often finds its expression in the most unexpected ways. The whimsically named Egg Canvas, with its intriguing subtitle "Brainchesiko," invites readers into a unique world where imagination and technology intersect. This blog post explores the essence of Egg Canvas and the concept of Brainchesiko, offering insights into how this playful combination reflects the broader trends in digital creativity and innovation.</p>
-                                <h3 className="blog-info-title">What is Egg Canvas?</h3>
-                                <p>Egg Canvas is more than just a quirky name; it's a platform that embodies the spirit of creativity. The term "Egg Canvas" suggests a blank slate, full of potential and ready to be shaped into something extraordinary. It represents the idea that creativity is an ever-evolving process, much like the transformation of a simple egg into a work of art.</p>
-                                <div className="best-service">
-                                    <ul className="list">
-                                        <li>High-Speed Internet Plans</li>
-                                        <li>Fiber Optic Broadband</li>
-                                        <li>Home Wi-Fi Installation</li>
-                                        <li>Business Internet Solutions</li>
-                                        <li>24/7 Customer Support</li>
-                                        <li>Unlimited Data Plans</li>
-                                        <li>Router and Modem Rentals</li>
-                                        <li>Network Security Services</li>
-                                    </ul>
-                                </div>
-                                <h3 className="blog-info-title">The Concept of Brainchesiko</h3>
-                                <p>"Brainchesiko" is a term that combines the words "brain" and "chesiko," the latter being a playful, invented term that evokes a sense of whimsy and exploration. In the context of Egg Canvas, Brainchesiko symbolizes the fusion of intellectual rigor and creative freedom. It's about using the brain's logical and analytical capabilities in tandem with imaginative, out-of-the-box thinking to create something truly unique.</p>
-                                <div className="news-user">
-                                    <div className="user-imgs"><img src="../assets/images/news-user1.png" alt="users" /></div>
-                                    <div className="user-imgs"><img src="../assets/images/news-user.png" alt="user" /></div>
+                                <p>{post.introduction}</p>
+                                {
+                                    post.sections.map((section, index) => (
+                                        <div div key={index}>
+                                            <h3 className="blog-info-title">{section.heading}</h3>
+                                            <p>{section.content}</p>
+                                            {
+                                                section.highlights && (
+                                                <div className="best-service">
+                                                    <ul className="list">
+                                                        {
+                                                            section.highlights.map((list, listIndex) => (
+                                                            <li key={listIndex}>{list}</li>
+                                                            ))
+                                                        }
+                                                    </ul>
+                                                </div>
+                                                )
+                                            }
+                                        </div>
+                                    ))
+                                }
+                                <div className="news-user" >
+                                    {
+                                        post.relatedIMg.map((images , k) => (
+                                            <div className="user-imgs" key={k}><img src={images} alt="users" /></div>
+                                        ))
+                                    }
                                 </div>
                                 <h3 className="blog-info-title">The Intersection of Creativity and Technology</h3>
                                 <p>Egg Canvas and Brainchesiko are emblematic of a broader trend in the digital world: the blending of art and technology. In an era where digital tools are becoming increasingly sophisticated, platforms like Egg Canvas offer creators the opportunity to push boundaries and experiment with new forms of expression. Brainchesiko, with its emphasis on imaginative thinking, encourages users to explore the limits of their creativity.</p>
                                 <div className="quote">
-                                    SpeedStream has revolutionized our home entertainment. No more buffering during our favorite shows, and the kids can game online without any issues. <br/>
-                                    <span>Highly recommend - Albanian</span>
+                                    {post.testimonial.quote} <br/>
+                                    <span>{post.testimonial.author}</span>
                                 </div>
                                 <h3 className="blog-info-title">How Egg Canvas Reflects Modern Digital Trends</h3>
                                 <p>Egg Canvas isn't just a platform; it's a reflection of the current digital zeitgeist. As more people seek out ways to express themselves online, the demand for creative outlets has grown. Egg Canvas meets this demand by providing a space where users can experiment, collaborate, and share their ideas with a like-minded community. Brainchesiko, in turn, serves as a reminder that creativity doesn't have to be serious or structured—it can be playful, spontaneous, and deeply personal.</p>
@@ -64,24 +76,14 @@ const PostContent = () => {
                             </div>
                             <div className="navtab-content author-card">
                                 <div className="author-box">
-                                    <div className="author-img"><img src="../assets/images/Albanian.png" alt="Author" /></div>
+                                    <div className="author-img"><img src={post.author.image} alt={post.author.name} /></div>
                                     <div className="author-details">
                                         <div className="author-name">
-                                            <h3 className="title">Albanian</h3>
-                                            <ul className="social-icon d-sm-flex d-none">
-                                                <li><Link to={''}><img src="../assets/images/icon/facebook.svg" alt="Facebook" /></Link></li>
-                                                <li><Link to={''}><img src="../assets/images/icon/twiter.svg" alt="Twiter" /></Link></li>
-                                                <li><Link to={''}><img src="../assets/images/icon/linkdine.svg" alt="Linkdine" /></Link></li>
-                                                <li><Link to={''}><img src="../assets/images/icon/instagram.svg" alt="Instagram" /></Link></li>
-                                            </ul>
+                                            <h3 className="title">{post.author.name}</h3>
+                                            <SocialIcons socialIconClass={'social-icon d-sm-flex d-none'} linkdetails={authorSocialLink}/>
                                         </div>
-                                        <p>Albanian is a digital storyteller and author of "The whimsically named Egg Canvas brainchesiko," exploring the fusion of creativity and technology. With a background in web development and design, they bring a playful yet insightful perspective to modern digital trends. Albanian’s work inspires others to embrace their creative potential.</p>
-                                        <ul className="social-icon d-sm-none d-flex">
-                                            <li><Link to={''}><img src="../assets/images/icon/facebook.svg" alt="Facebook" /></Link></li>
-                                            <li><Link to={''}><img src="../assets/images/icon/twiter.svg" alt="Twiter" /></Link></li>
-                                            <li><Link to={''}><img src="../assets/images/icon/linkdine.svg" alt="Linkdine" /></Link></li>
-                                            <li><Link to={''}><img src="../assets/images/icon/instagram.svg" alt="Instagram" /></Link></li>
-                                        </ul>
+                                        <p>{post.author.bio}</p>
+                                            <SocialIcons socialIconClass={'social-icon d-sm-none d-flex'} linkdetails={authorSocialLink}/>
                                     </div>
                                 </div>
                             </div>

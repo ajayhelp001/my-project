@@ -6,18 +6,23 @@ import Instagram from '../assets/images/icon/instagram.svg'
 import { Link } from 'react-router-dom'
 
 
-const SocialIcons = ({socialIconClass}) => {
-    const socialLink = [
+const SocialIcons = ({socialIconClass = 'social-icon' , linkdetails}) => {
+    const defaultSocialLinks = [
         { link: 'https://facebook.com', linkImg: Facebook },
         { link: 'https://twitter.com', linkImg: Twiter },
         { link: 'https://linkedin.com', linkImg: Linkdine },
         { link: 'https://instagram.com', linkImg: Instagram }
     ]
+    const socialLinks = defaultSocialLinks.map((item,index) => ({
+        link: linkdetails?.[index]?.link || item.link,
+        linkImg: item.linkImg
+    }
+    ));
   return (
     <>
         <ul className={socialIconClass}>
             {
-                socialLink.map((val, i) => 
+                socialLinks.map((val, i) => 
                     <li key={i}>
                         <Link to={val.link}><img src={val.linkImg} alt={val.link} /></Link>
                     </li>

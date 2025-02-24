@@ -21,16 +21,16 @@ const BlogSection = () => {
                                     <div class="blog-item" key={i}>
                                         <div class="blog-img">
                                             <img src={item.image} alt={item.title} />
-                                            <div class="readmore-btn"><Link to={`/blogs/${item.id}`} class="serviceBtn">Read More <span><img src={ArrowImg} alt="arrow" /></span></Link></div>
+                                            <div class="readmore-btn"><Link to={`/blogs/${item.slug}`} class="serviceBtn">Read More <span><img src={ArrowImg} alt="arrow" /></span></Link></div>
                                         </div>
                                         <div class="blog-details-item">
-                                            <h3 class="blog-title"><Link to={`/blogs/${item.id}`}>{item.title}</Link></h3>
+                                            <h3 class="blog-title"><Link to={`/blogs/${item.slug}`}>{item.title}</Link></h3>
                                             <p>{item.description}</p>
                                             <div class="comments">
                                                 <div class="comment-item"><span><img src={CommentImg} alt="Comment" /></span> {item.comments}</div>
                                                 <div class="comment-item"><span><img src={DateImg} alt="Date" /></span> {item.date}</div>
                                             </div>
-                                            <Link to={`/blogs/${item.id}`} class="serviceBtn">Read More <span><img src={ArrowImg} alt="arrow" /></span></Link>
+                                            <Link to={`/blogs/${item.slug}`} class="serviceBtn">Read More <span><img src={ArrowImg} alt="arrow" /></span></Link>
                                         </div>
                                     </div>
                                 ))
