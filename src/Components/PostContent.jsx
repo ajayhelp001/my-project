@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import blogPosts from '../BlogApi/blogData'
+import ContactForm from '../GlobalComponent/ContactForm';
 import SocialIcons from '../GlobalComponent/SocialIcons';
+import SearchIcon from '../assets/images/icon/search.svg';
+import Support from '../assets/images/support.png';
+import CallIcon from '../assets/images/icon/call.svg';
+import DotsShap from '../assets/images/shaps/dot.svg';
+import ImageGallery from '../GlobalComponent/ImageGallery';
 
 const PostContent = () => {
     
@@ -17,6 +23,7 @@ const PostContent = () => {
         { link: `https://linkedin.com/${post.author.name}` },
         { link: `https://instagram.com/${post.author.name}` }
     ]
+    const cotnactus = {number: '+987-654-3210', link : 'tel:9876543210'}
     return (
         <>
             <section className="blog-details section-spacing">
@@ -60,19 +67,14 @@ const PostContent = () => {
                                 <div className="news-user" >
                                     {
                                         post.relatedIMg.map((images , k) => (
-                                            <div className="user-imgs" key={k}><img src={images} alt="users" /></div>
+                                            <ImageGallery key={k} galleryBtnClass='user-imgs' galleryImgUrl={images} galleryImg={images} galleryImgAlt="users"/>
                                         ))
                                     }
                                 </div>
-                                <h3 className="blog-info-title">The Intersection of Creativity and Technology</h3>
-                                <p>Egg Canvas and Brainchesiko are emblematic of a broader trend in the digital world: the blending of art and technology. In an era where digital tools are becoming increasingly sophisticated, platforms like Egg Canvas offer creators the opportunity to push boundaries and experiment with new forms of expression. Brainchesiko, with its emphasis on imaginative thinking, encourages users to explore the limits of their creativity.</p>
-                                <div className="quote">
+                                 <div className="quote">
                                     {post.testimonial.quote} <br/>
                                     <span>{post.testimonial.author}</span>
                                 </div>
-                                <h3 className="blog-info-title">How Egg Canvas Reflects Modern Digital Trends</h3>
-                                <p>Egg Canvas isn't just a platform; it's a reflection of the current digital zeitgeist. As more people seek out ways to express themselves online, the demand for creative outlets has grown. Egg Canvas meets this demand by providing a space where users can experiment, collaborate, and share their ideas with a like-minded community. Brainchesiko, in turn, serves as a reminder that creativity doesn't have to be serious or structured—it can be playful, spontaneous, and deeply personal.</p>
-                                
                             </div>
                             <div className="navtab-content author-card">
                                 <div className="author-box">
@@ -95,18 +97,18 @@ const PostContent = () => {
                                     <form className="form p-0">
                                         <div className="form-group add-btn">
                                             <input type="text" placeholder="Enter Keyword..." className="form-control" autoComplete="off" />
-                                            <button className="btn" type="submit"><img src="../assets/images/icon/search.svg" alt="search" /></button>
+                                            <button className="btn" type="submit"><img src={SearchIcon} alt="search" /></button>
                                         </div>
                                     </form>
                                 </div>
                                 <div className="navtabs">
                                     <div className="sub-heading white-heading"><span></span>Service List</div>
                                     <ul className="nav flex-column nav-pills" id="pills-tab" role="tablist">
-                                        <li className="nav-item"><Link href="services.html" className="nav-link">SpeedStream</Link></li>
-                                        <li className="nav-item"><Link href="services.html" className="nav-link">UltraConnect</Link></li>
-                                        <li className="nav-item"><Link href="services.html" className="nav-link">FiberFlow</Link></li>
-                                        <li className="nav-item"><Link href="services.html" className="nav-link">NetWave</Link></li>
-                                        <li className="nav-item"><Link href="services.html" className="nav-link">BroadNet</Link></li>
+                                        <li className="nav-item"><Link to={''} className="nav-link">SpeedStream</Link></li>
+                                        <li className="nav-item"><Link to={''} className="nav-link">UltraConnect</Link></li>
+                                        <li className="nav-item"><Link to={''} className="nav-link">FiberFlow</Link></li>
+                                        <li className="nav-item"><Link to={''} className="nav-link">NetWave</Link></li>
+                                        <li className="nav-item"><Link to={''} className="nav-link">BroadNet</Link></li>
                                     </ul>
                                 </div>
                                 <div className="navtabs">
@@ -123,47 +125,26 @@ const PostContent = () => {
                                     </ul>
                                 </div>
                                 <div className="need-help">
-                                    <div className="support"><img src="../assets/images/support.png" alt="support" /></div>
+                                    <div className="support"><img src={Support} alt="support" /></div>
                                     <div className="navtabs">
                                         <div className="discription">
                                             <div className="contact">
-                                                <Link href="tel:9876543210" className="video-btn">
-                                                    <img src="../assets/images/icon/call.svg" alt="contact us" />
+                                                <Link to={cotnactus.link} className="video-btn">
+                                                    <img src={CallIcon} alt="contact us" />
                                                 </Link>
                                             </div>
                                             <h2 className="title">Need Help?</h2>
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, sint.</p>
-                                            <Link href="tel:9876543210" className="themebtn white-hover">+987-654-3210</Link>
+                                            <Link to={cotnactus.link} className="themebtn white-hover">{cotnactus.number}</Link>
                                         </div>
                                     </div>
                                 </div>
-                                <form className="form contact-card" autoComplete="off">
-                                    <div className="row g-4">
-                                        <div className="col-sm-12 col-12">
-                                            <div className="form-group">
-                                                <input type="text" placeholder="Your Name" className="form-control" autoComplete="off" />
-                                            </div>
-                                        </div>
-                                        <div className="col-sm-12 col-12">
-                                            <div className="form-group">
-                                                <input type="email" placeholder="Email Address" className="form-control" autoComplete="off" />
-                                            </div>
-                                        </div>
-                                        <div className="col-sm-12 col-12">
-                                            <div className="form-group">
-                                                <textarea name="message" id="Comments" rows="5" className="form-control" placeholder="Comment..."></textarea>
-                                            </div>
-                                        </div>
-                                        <div className="col-sm-12 col-12">
-                                            <button type="button" className="themebtn white-hover">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                <ContactForm/>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="dots"><img src="../assets/images/shaps/dot.svg" alt="dot" /></div>
+                <div className="dots"><img src={DotsShap} alt="dot" /></div>
             </section>
         </>
     )

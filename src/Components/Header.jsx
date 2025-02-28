@@ -33,8 +33,7 @@ const Header = () => {
         { title: 'Pages', link : '' ,
             innerNav : [
                 { title: 'Services', link : '/'},
-                { title: 'Blogs', link : '/blogs'},
-                { title: 'Singal Post', link : '/'}
+                { title: 'Blogs', link : '/blogs'}
             ]
         },
         { title: 'Contact', link : '/contact'}

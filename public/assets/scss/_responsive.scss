@@ -1073,6 +1073,7 @@
         }
         & .news-user {
             gap: 20px;
+            grid-template-columns: 1fr;
         }
         & .author-box {
             padding: 30px 25px;

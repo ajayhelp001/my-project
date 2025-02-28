@@ -10,6 +10,7 @@ const WhoWeAreSection = () => {
         "Super-Fast Dongle",
         "High Speed Wi-Fi",
         "Prepaid SIM",
+        "Prepaid SIM",
         "5G Updations"
       ];
   return (
