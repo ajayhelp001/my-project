@@ -162,7 +162,7 @@ const blogPosts = [
             author: "Emma, Cybersecurity Consultant"
         },
         author: {
-            image: '../assets/images/author-2.jpg',
+            image: '../assets/images/author-1.jpg',
             name: "Robert Lee",
             bio: "Cybersecurity expert helping users stay safe online.",
             socials: {
@@ -205,7 +205,7 @@ const blogPosts = [
             author: "Chris, Digital Nomad"
         },
         author: {
-            image: '../assets/images/author-4.png',
+            image: '../assets/images/author-2.jpg',
             name: "Emily Davis",
             bio: "Consumer tech expert reviewing internet service providers.",
             socials: {
@@ -248,7 +248,7 @@ const blogPosts = [
             author: "Nina, Freelancer"
         },
         author: {
-            image: '../assets/images/author-5.png',
+            image: '../assets/images/author-2.jpg',
             name: "Daniel Parker",
             bio: "Tech writer specializing in internet performance optimization.",
             socials: {

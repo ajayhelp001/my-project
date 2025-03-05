@@ -48,32 +48,34 @@ const TestimonialSection = () => {
                         <div className="testimonial-card" id="dotsscode">
                             <div className="row">
                                 {
-                                    authors.map((item, k) => (
-                                    <div className="col-xl-4 col-lg-6 col-sm-12 col-12" key={k}>
-                                        <div className="clientcard">
-                                            <div className="client-image"><img src={item.clientImg} alt={item.clientName} /></div>
-                                            <h3 className="client-name">{item.clientName}</h3>
-                                            <span className="client-position">{item.clientPosition}</span>
-                                            <div className="discription">
-                                                <p>{item.clientDiscription}</p>
-                                                <ul className="rating">
-                                                    {[...Array(5)].map((_, i) => (
-                                                        <li key={i}>
-                                                            <img src={i < item.clientRating ? `${Rating}` : `${GrayStar}`} alt="rating" />
-                                                        </li>
-                                                    ))}
-                                                </ul>
+                                    authors.map((item, k) => {
+                                        let authorSocialLink = [
+                                            { link: `https://facebook.com/${item.clientName.replace(/\s+/g, '').toLowerCase()}` },
+                                            { link: `https://twitter.com/${item.clientName.replace(/\s+/g, '').toLowerCase()}` },
+                                            { link: `https://linkedin.com/${item.clientName.replace(/\s+/g, '').toLowerCase()}` },
+                                            { link: `https://instagram.com/${item.clientName.replace(/\s+/g, '').toLowerCase()}` }
+                                        ]
+                                        return (
+                                            <div className="col-xl-4 col-lg-6 col-sm-12 col-12" key={k}>
+                                                <div className="clientcard">
+                                                    <div className="client-image"><img src={item.clientImg} alt={item.clientName} /></div>
+                                                    <h3 className="client-name">{item.clientName}</h3>
+                                                    <span className="client-position">{item.clientPosition}</span>
+                                                    <div className="discription">
+                                                        <p>{item.clientDiscription}</p>
+                                                        <ul className="rating">
+                                                            {[...Array(5)].map((_, i) => (
+                                                                <li key={i}>
+                                                                    <img src={i < item.clientRating ? `${Rating}` : `${GrayStar}`} alt="rating" />
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                    <SocialIcons linkdetails = {authorSocialLink} />
+                                                </div>
                                             </div>
-                                            <SocialIcons />
-                                            {/* <ul className="social-icon">
-                                                <li><Link to={item.facebookLink}><img src={Facebook} alt="Facebook" /></Link></li>
-                                                <li><Link to={item.twitterLink}><img src={Twiter} alt="Twiter" /></Link></li>
-                                                <li><Link to={item.linkedinLink}><img src={Linkdine} alt="Linkdine" /></Link></li>
-                                                <li><Link to={item.instagramLink}><img src={Instagram} alt="Instagram" /></Link></li>
-                                            </ul> */}
-                                        </div>
-                                    </div>
-                                    ))  
+                                            )
+                                    })  
                                 }
                             </div>
                         </div>

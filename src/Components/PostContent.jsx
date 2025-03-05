@@ -18,10 +18,10 @@ const PostContent = () => {
     }
 
     const authorSocialLink = [
-        { link: `https://facebook.com/${post.author.name}` },
-        { link: `https://twitter.com/${post.author.name}` },
-        { link: `https://linkedin.com/${post.author.name}` },
-        { link: `https://instagram.com/${post.author.name}` }
+        { link: `https://facebook.com/${post.author.name.replace(/\s+/g, '').toLowerCase()}` },
+        { link: `https://twitter.com/${post.author.name.replace(/\s+/g, '').toLowerCase()}` },
+        { link: `https://linkedin.com/${post.author.name.replace(/\s+/g, '').toLowerCase()}` },
+        { link: `https://instagram.com/${post.author.name.replace(/\s+/g, '').toLowerCase()}` }
     ]
     const cotnactus = {number: '+987-654-3210', link : 'tel:9876543210'}
     return (
