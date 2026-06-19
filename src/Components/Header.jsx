@@ -67,7 +67,7 @@ const Header = () => {
         </div>
         <nav className="navbar navbar-expand-lg " aria-label="Offcanvas navbar large">
             <div className="container">
-                <a className="navbar-brand" to="/"><img src={Logo} alt="logo" /></a>
+                <Link className="navbar-brand" to="/"><img src={Logo} alt="logo" /></Link>
                 <button onClick={() => setMenuImg(!menuImg)} className={`navbar-toggler shadow-none border-0 rounded-0 d-lg-none ${menuImg ? 'active' : ''}`} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
                     <span className="menu"></span>
                 </button>

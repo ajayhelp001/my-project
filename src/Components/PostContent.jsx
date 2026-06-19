@@ -12,6 +12,8 @@ import ImageGallery from '../GlobalComponent/ImageGallery';
 const PostContent = () => {
     
     const { slug } = useParams();
+    console.log(slug);
+    
     const post = blogPosts.find((post) => post.slug === slug)
     if (!post) {
         return <h2 className='text-white text-center'>Post Not Found</h2>;
