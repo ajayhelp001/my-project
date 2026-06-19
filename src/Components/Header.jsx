@@ -71,18 +71,18 @@ const Header = () => {
                 <button onClick={() => setMenuImg(!menuImg)} className={`navbar-toggler shadow-none border-0 rounded-0 d-lg-none ${menuImg ? 'active' : ''}`} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
                     <span className="menu"></span>
                 </button>
-                <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2">
+                <div className={`offcanvas offcanvas-end ${menuImg ? 'show' : ''}`} tabindex="-1" id="offcanvasNavbar2">
                     <div className="offcanvas-body align-items-center">
                         <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
                             {
                                 usefulLinks.map((navs, index) => (
-                                    <li key={index} className="nav-item"><NavLink className="nav-link" aria-current="page" to={navs.link}>{navs.title}</NavLink>
+                                    <li key={index} className="nav-item"><NavLink className="nav-link" aria-current="page" onClick={() => setMenuImg(!menuImg)} to={navs.link}>{navs.title}</NavLink>
                                             {
                                                 navs.innerNav && (
                                                     <ul className="sub-menu">
                                                         {
                                                             navs.innerNav.map((submenu, i) => (
-                                                                <li key={i}><NavLink className="menu-item" to={submenu.link}>{submenu.title}</NavLink></li>
+                                                                <li key={i}><NavLink className="menu-item" onClick={() => setMenuImg(!menuImg)} to={submenu.link}>{submenu.title}</NavLink></li>
                                                             ))
                                                         }
                                                     </ul>
@@ -92,7 +92,7 @@ const Header = () => {
                                 ))
                             }
                         </ul>
-                        <Link to='/' className="themebtn outline text-white">Sign In</Link>
+                        <Link to='/' className="themebtn outline text-white" onClick={() => setMenuImg(!menuImg)}>Sign In</Link>
                     </div>
                 </div>
             </div>
